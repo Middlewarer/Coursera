@@ -1,17 +1,19 @@
 from django.shortcuts import render
+from django.views import View
 
 from .models import Courses
 
-def index_view(request):
-    context = {
+#IndexView ---> Default page
+class IndexView(View):
+    template_name = "courses/index.html"
 
-    }
-    return render(request, 'courses/index.html', context=context)
+    def get(self, request):
+        return render(request, self.template_name)
+    
+#CoursesListView ----> Page with the lists of the main courses
+class CoursesListView(View):
+    template_name = "courses/courses_list.html"
 
-
-
-def courses_list_view(request):
-    context = {
-        'courses': Courses.objects.all()
-    }
-    return render(request, 'courses/courses_list.html', context=context)
+    def get(self, request):
+        objects = Courses.objects.all()
+        return render(request, self.template_name, {'courses': objects})
