@@ -8,9 +8,9 @@
 <body>
     <h1>This is the default courses list</h1>
     <ul>
-        {% for foo in courses %}
+        {%for course in courses %}
         <li>
-            {{foo.name}}
+            <a href="{% url 'courses:courses_detail_view' course.pk %}">{{course.name}}</a>
         </li>
         {% endfor %}
     </ul>

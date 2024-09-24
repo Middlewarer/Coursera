@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
+
 
 from .models import Courses
 
@@ -17,3 +18,10 @@ class CoursesListView(View):
     def get(self, request):
         objects = Courses.objects.all()
         return render(request, self.template_name, {'courses': objects})
+    
+class CourseDetailView(View):
+    template_name = "courses/course_detail.html"
+
+    def get(self, request, pk):
+        course = get_object_or_404(Courses, pk=pk)
+        return render(request, self.template_name, {'course': course})
