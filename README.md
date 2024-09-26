@@ -21,10 +21,8 @@ The site includes a course catalog, a user account, a registration and authoriza
 <b>UX/UI Design</b>:
 
 <i>Figma</i>: Graphic editor for creating interface layouts and prototypes.
-
+<br>
 <h3>Figma layout: https://www.figma.com/design/WZbF22OAp4koC2bTi2SbVk/Untitled?node-id=0-1&t=4JqMIXeRPzaKITfT-1</h3>
-
 <hr>
 
-<hr>
 
